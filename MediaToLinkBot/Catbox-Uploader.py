@@ -13,6 +13,7 @@ RKN_PROGRESS = """<b>\n
 ┣⪼ ⏳️ ᴅᴏɴᴇ : {0}%
 ┣⪼ 🚀 ꜱᴩᴇᴇᴅ: {3}/s
 ┣⪼ ⏰️ ᴇᴛᴀ: {4}
+┣⪼ Followed By @rb1bots
 ╰━━━━━━━━━━━━━━━➣ </b>"""
 
 async def progress_for_pyrogram(current, total, ud_type, message, start):
@@ -94,20 +95,20 @@ async def catbox_link_convert(bot, update, edit):
 @Client.on_message(filters.command('start') & filters.private)
 async def start_command(client, message):
     button = InlineKeyboardMarkup([[
-        InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ', url='https://t.me/RknDeveloper'),
-        InlineKeyboardButton('Sᴜᴩᴩᴏʀᴛ', url='https://t.me/RknBots_Support')
+        InlineKeyboardButton('Uᴩᴅᴀᴛᴇꜱ', url='https://t.me/requestbox1'),
+        InlineKeyboardButton('Sᴜᴩᴩᴏʀᴛ', url='https://t.me/rb1bots')
         ],[
         #InlineKeyboardButton('🎛️ Aʙᴏᴜᴛ', callback_data='about'),
         #InlineKeyboardButton('🛠️ Hᴇʟᴩ', callback_data='help')
         #],[
-        InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url="https://t.me/+klNh8N3hXjM1MDFk")
+        InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url="https://t.me/requestbox1official")
     ]])
-    await message.reply_text("I Am Media To Link Convert Bot.", reply_markup=button)
+    await message.reply_text("I Am Media To Link Convert Bot. \n\nSend me files i will give you direct link to download without any shortners", reply_markup=button)
 
 async def file_size_function(update):
     try:
         file = getattr(update, update.media.value)
-        if file.file_size > 200 * 1024 * 1024:
+        if file.file_size > 3900 * 1024 * 1024:
             return True
     except:
         return False
@@ -130,7 +131,7 @@ async def getmedia(bot, update):
         InlineKeyboardButton(text="Open Link", url=f"{link}"),
         InlineKeyboardButton(text="Share Link", url=f"https://telegram.me/share/url?url={link}")
         ],[
-        InlineKeyboardButton(text="Join Updates Channel", url="https://telegram.me/RknDeveloper")
+        InlineKeyboardButton(text="Need Help", url="https://telegram.me/helpsarthak_bot")
         ]])   
     await message.edit_text(
         text=f"Link: `{link}`",
